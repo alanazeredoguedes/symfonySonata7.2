@@ -1,0 +1,11 @@
+sonata_user:
+    manager_type: orm # can be orm or mongodb
+    admin:
+        user:
+            class: App\Application\Sonata\UserBundle\Admin\UserAdmin
+
+        group:
+            class: App\Application\Sonata\UserBundle\Admin\GroupAdmin
+    class:
+        user: App\Application\Sonata\UserBundle\Entity\User
+        group: App\Application\Sonata\UserBundle\Entity\Group

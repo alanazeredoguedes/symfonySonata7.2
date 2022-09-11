@@ -1,0 +1,8 @@
+{% extends '@SonataAdmin/CRUD/base_show_field.html.twig' %}
+{% block field %}
+    {% for key, val in value %}
+        <span class="badge rounded-pill" style="background-color: #3c8dbc">{{ key+1 }}</span>
+        {{ val }}
+        <br/>
+    {% endfor %}
+{% endblock %}

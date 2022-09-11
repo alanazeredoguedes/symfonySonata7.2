@@ -1,0 +1,112 @@
+sonata_admin:
+    security:
+        handler: sonata.admin.security.handler.role
+
+        role_super_admin: ROLE_SUPER_ADMIN
+
+        admin_permissions:
+
+            # Defaults:
+            - CREATE
+            - LIST
+            - DELETE
+            - UNDELETE
+            - EXPORT
+            - OPERATOR
+            - MASTER
+        object_permissions:
+
+            # Defaults:
+            - VIEW
+            - EDIT
+            - DELETE
+            - UNDELETE
+            - OPERATOR
+            - MASTER
+            - OWNER
+
+
+    title: 'Project-Base'
+    title_logo: 'img/logo/logo.png'
+    search: true
+
+    options:
+        legacy_twig_text_extension: false
+        sort_admins: false
+        js_debug: false
+        confirm_exit: true
+        skin: 'skin-black'
+        use_select2: true
+        use_icheck: true
+        use_bootlint: false
+        use_stickyforms: true
+        default_group: default
+        dropdown_number_groups_per_colums:  2
+
+    show_mosaic_button: false
+    global_search:
+        case_sensitive: true
+        empty_boxes: fade
+
+
+    dashboard:
+        blocks:
+            - { type: sonata.admin.block.admin_list, position: center }
+
+            -
+                position: top
+                class: col-md-12
+                type: sonata.block.service.text
+                settings:
+                    content: >
+                        <div class="jumbotron" style="background-color: #2b2c2d; background-size: 100%;">
+                            <div class="conteiner" >
+                                <br>
+                                <h1 class="text-center" style="color:white">
+                                    Project-Base
+                                </h1>
+                                <h3 class="text-center" style="color:white">
+                                    Project-Description
+                                </h3>
+                                <br><br><br>
+                                <h4 class="text-right" style="color:white; margin-right: 50px;">
+                                    Sistema Desenvolvido Por:
+                                    <a style="color:white;" target="_blank" href="https://www.linkedin.com/in/alan-azeredo-guedes-786575191/" aria-hidden="true">
+                                        <b>Alan Guedes</b>
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                        <br>
+
+
+
+#####################################################################################################
+#####################################################################################################
+
+
+    assets:
+        remove_stylesheets:
+        #- bundles/sonataadmin/vendor/admin-lte/dist/css/AdminLTE.min.css
+        #- bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-black.min.css
+
+        remove_javascripts:
+        #- bundles/sonataadmin/vendor/admin-lte/dist/js/app.min.js
+        #- bundles/sonataadmin/Admin.js
+        #- bundles/sonatacore/js/base.js
+
+        extra_stylesheets:
+            - bundles/applicationsonatauser/css/styles.css
+
+        extra_javascripts:
+            - bundles/applicationsonatauser/js/configs-admin.js
+
+
+
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+        sonata.block.service.text:
+        sonata.admin.block.stats:
+
