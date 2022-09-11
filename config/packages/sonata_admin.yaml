@@ -26,7 +26,7 @@ sonata_admin:
             - OWNER
 
 
-    title: 'Project-Base'
+    title: ' '
     title_logo: 'img/logo/logo.png'
     search: true
 
